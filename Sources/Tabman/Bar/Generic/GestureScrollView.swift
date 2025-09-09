@@ -15,7 +15,7 @@ protocol GestureScrollViewGestureDelegate: AnyObject {
 }
 
 /// Scroll view which provides enhanced scroll modes via gestures.
-internal final class GestureScrollView: UIScrollView {
+public final class GestureScrollView: UIScrollView {
     
     // MARK: Types
     
@@ -28,7 +28,7 @@ internal final class GestureScrollView: UIScrollView {
     // MARK: Properties
     
     @available(*, unavailable)
-    override var isScrollEnabled: Bool {
+    public override var isScrollEnabled: Bool {
         didSet {}
     }
     var scrollMode: ScrollMode = .interactive {

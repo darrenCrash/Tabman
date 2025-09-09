@@ -36,7 +36,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     internal let rootContentStack = UIStackView()
     
     internal let scrollViewContainer = EdgeFadedView()
-    internal let scrollView = GestureScrollView()
+    public let scrollView = GestureScrollView()
     internal private(set) var layoutGrid: TMBarViewLayoutGrid!
     
     private let scrollHandler: TMBarViewScrollHandler
