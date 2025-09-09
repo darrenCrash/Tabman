@@ -133,10 +133,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// :nodoc:
     open override func deletePage(at index: PageboyViewController.PageIndex,
-                                  then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        bars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
-        super.deletePage(at: index, then: updateBehavior)
+                                  then updateBehavior: PageboyViewController.PageUpdateBehavior,
+                                  completion: (() -> Void)? = nil) {
+        bars.forEach { $0.reloadData(at: index...index, context: .deletion) }
+        super.deletePage(at: index, then: updateBehavior, completion: completion)
     }
+
     
     /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
